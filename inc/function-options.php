@@ -73,7 +73,7 @@ class GOVPH
     add_theme_page('Theme Options', 'Theme Options', 'administrator', 'govph-options', array('GOVPH', 'govph_options_page'),6);
   }
 
-  public function govph_options_page(){
+  public static function govph_options_page(){
   ?>
 <div class="wrap">
 
