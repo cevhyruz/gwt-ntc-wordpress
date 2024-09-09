@@ -218,13 +218,6 @@ h6 {
 	#aux-main .dropdown li:not(.has-form) a:not(.button):hover,
 	#aux-main .dropdown li:not(.has-form):hover > a:not(.button) {
   background: #e4e4e4;
-  font-size: 0.9rem;
-  font-weight: bold;
-  -webkit-transition: all 400ms ease;
-  -moz-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-  transition: all 400ms ease;
 }
 #main-nav li.current-menu-item:not(.has-form) a:not(.button),
 #aux-main li.current-menu-item:not(.has-form) a:not(.button),
