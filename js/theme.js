@@ -318,16 +318,16 @@ function eraseCookie(name) {
     });
     // End for Adjust Text Sizing
 
+    var mySidenav = document.getElementById("mySidenav")
     $("#openNav").click(function (event) {
-      event.preventDefault();
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
+      console.log(mySidenav);
+      mySidenav.style.width = "300px";
     });
 
     $("#closeNav").click(function (event) {
+      let mySideNav = document.getElementById("mySidenav");
       event.preventDefault();
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
+      mySideNav.style.width = "0";
     });
     // End for Testing
   });
