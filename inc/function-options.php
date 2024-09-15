@@ -42,6 +42,7 @@ class GOVPH
     // 'govph_custom_menu_font_color_hover' => '',
    // End For Approval of menu colors
     'govph_custom_headings_text' => '',
+    'govph_custom_headings_size' => '',
     'govph_custom_headings_inner_page_size' => '',
     'govph_custom_footer_background_color' => '',
     'govph_content_show_pub_date' => '',
@@ -60,7 +61,7 @@ class GOVPH
 
   public function __construct(){
     // Added Default array on functions-options.php to prevent failing/crashing on call to sizeof 
-    $this->options = get_option('govph_options', array());
+    $this->options = get_option('govph_options', $this->_default_options);
     // to avoid warnings, reinstatiate all arrays that does not exist
     if(sizeof($this->options) > 0){
       $this->options = array_merge($this->_default_options, $this->options);
@@ -923,17 +924,17 @@ function govph_displayoptions( $options ){
       echo $anchorColor;
       break;
     case 'govph_disable_search':
-      return ($option['govph_disable_search'] ? false  : true);
+      return  (isset($option['govph_disable_search']) &&  $option['govph_disable_search'] ? false  : true);
       break;
     // TODO: disable option for widget position, make it dynamic, displays sidebars when atleast one widget is active
     // Start of case for disable gutenberg on widgets
     case 'govph_enable_widget_classic_editor':
-      return ($option['govph_enable_widget_classic_editor'] ? false  : true);
+      return (isset($option['govph_enable_widget_classic_editor']) && $option['govph_enable_widget_classic_editor'] ? false  : true);
       break;
     // End of case for disable gutenberg on widgets
     // Start of case for disable gutenberg on posts
     case 'govph_enable_post_classic_editor':
-      return ($option['govph_enable_post_classic_editor'] ? false  : true);
+      return (isset($option['govph_enable_post_classic_editor']) && $option['govph_enable_post_classic_editor'] ? false  : true);
       break;
     // End of case for disable gutenberg on posts
     case 'govph_content_position':

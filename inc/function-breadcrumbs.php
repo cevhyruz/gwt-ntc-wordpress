@@ -6,15 +6,15 @@ function gwt_wp_breadcrumb() {
 	global $post;
 	$option = get_option('govph_options');
 
-	if($option['govph_breadcrumbs_enable'] != 'true'){
+	if( isset($option['govph_breadcrumbs_enable']) && $option['govph_breadcrumbs_enable'] != 'true'){
 		return false;
 	}
-	$separator = $option['govph_breadcrumbs_separator'] ? $option['govph_breadcrumbs_separator'] : ' / ';
+	$separator = isset($option['govph_breadcrumbs_separator']) && $option['govph_breadcrumbs_separator'] ? $option['govph_breadcrumbs_separator'] : ' / ';
 	$separator_block = '<span class="separator">'.$separator.'</span>';
 	
 	if (!is_home()) {
 		echo '<ul class="breadcrumbs">';
-		if($option['govph_breadcrumbs_show_home'] == 'true'){
+		if (isset($option['govph_breadcrumbs_show_home']) && $option['govph_breadcrumbs_show_home'] == 'true'){
 			echo '<li>You are here:</li>';
 			echo '<li><a class="pathway" href="';
 			echo home_url();
@@ -26,7 +26,7 @@ function gwt_wp_breadcrumb() {
 		}
 		
 	} else {
-		if($option['govph_breadcrumbs_show_home'] == 'true'){
+		if (isset($option['govph_breadcrumbs_show_home']) && $option['govph_breadcrumbs_show_home'] == 'true'){
 			echo '<ul class="breadcrumbs">';
 			echo '<li>You are here:</li>';
 			echo '<li><a class="pathway" href="';
