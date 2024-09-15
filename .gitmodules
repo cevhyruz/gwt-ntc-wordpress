@@ -1,0 +1,3 @@
+[submodule "vendors/envato-flex-slider"]
+	path = vendors/envato-flex-slider
+	url = git@github.com:cevhyruz/envato-flex-slider.git

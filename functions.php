@@ -88,7 +88,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Envato Flexslider
  */
-require get_template_directory() . '/inc/vendors/envato-flex-slider/envato-flex-slider.php';
+require get_template_directory() . '/vendors/envato-flex-slider/envato-flex-slider.php';
 
 /**
  * Disable rest api for users additions.
