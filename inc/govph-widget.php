@@ -106,7 +106,7 @@ class govph_widget_foi extends WP_Widget {
 		// Widget output
 		echo $args['before_widget'];
 		if ( ! empty( $instance['url'] ) ) {
-			echo '<a href="'.$instance['url'].'"><img id="foi-logo" src="'. get_template_directory_uri() .'/images/foi-logo-160x160.png" alt="freedom of information logo" title="Freedom of Informstion"></a>';
+			echo '<a href="'.$instance['url'].'"><img id="foi-logo" src="'. get_template_directory_uri() .'/images/foi-logo-160x160.png" alt="freedom of information logo" title="Freedom of Information"></a>';
 		}
 		echo $args['after_widget'];
 	}
