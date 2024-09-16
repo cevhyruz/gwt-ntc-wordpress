@@ -867,6 +867,11 @@ function mw_enqueue_color_picker( $hook_suffix ) {
   wp_enqueue_style('wp-color-picker');
   wp_enqueue_script('my-script-handle', get_template_directory_uri() . '/js/color.js', array('wp-color-picker'), false, true );
 }
+ 
+add_action( 'after_setup_theme', 'theme_slug_setup' );
+function theme_slug_setup() {
+	add_theme_support( 'title-tag' );
+}
 
 function govph_displayoptions( $options ){
   // echo $option['govph_custom_border_width'];
