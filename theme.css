@@ -241,8 +241,9 @@ h6 {
 
 /*off-canvass*/
 #off-canvas-container {
-  z-index: 4;
+  z-index: 1;
   box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.2);
+  position: fixed;
 }
 .title-bar {
   background: #f7f7f7;
@@ -266,8 +267,8 @@ h6 {
   height: 100%;
 }
 #offCanvasRight .is-drilldown {
-  max-width: 250px !important;
-  height: 95%;
+  max-width: 370px !important;
+  height: 100%;
 }
 #offCanvasRight .list-item {
   background-color: #f7f7f7;
@@ -286,17 +287,17 @@ h6 {
 #offCanvasRight li a {
   background-color: #f7f7f7;
   color: #000;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 1.8;
 }
 #offCanvasRight li .is-drilldown-submenu a {
   font-size: 15px;
-  /*font-weight: 600;*/
+  font-weight: 600;
 }
-/*#offCanvasRight li ul ul a {
+#offCanvasRight li ul ul a {
 		font-size: 13px;
 		font-weight: 600;
-	}*/
+}
 #offCanvasRight .menu-item-has-children a::after {
   border-color: transparent transparent transparent #898989;
 }
@@ -512,20 +513,25 @@ this is for mobile menus */
 .sidenav {
   height: 100%;
   width: 0;
-  position: fixed;
-  z-index: 1;
+  position: fixed !important;
+  z-index: 1000;
   top: 0;
-  left: 0;
-  background-color: #f7f7f7;
-  overflow-x: hidden;
-  transition: 0.4s;
+  right: 0;
+  background-color: #dadada;
+  overflow-x: hidden !important;
+  transition: 0.2s;
+  /* margin-top: 40px; */
   padding-top: 60px;
+}
+
+.mySidenav {
+  overflow: hidden;
 }
 
 .sidenav a {
   padding: 4px 4px 4px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   color: rgb(59, 56, 56);
   display: block;
   transition: 0.3s;
@@ -536,12 +542,16 @@ this is for mobile menus */
 }
 
 .sidenav .closebtn {
+  font-weight: bold;
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
+  top: -20px;
+  right: 10px;
+  font-size: 50px;
   margin-left: 50px;
+  z-index: 1000;
 }
+
+
 #main {
   transition: margin-left 0.5s;
   padding: 16px;

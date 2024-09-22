@@ -319,15 +319,18 @@ function eraseCookie(name) {
     // End for Adjust Text Sizing
 
     var mySidenav = document.getElementById("mySidenav")
+    var closeButton = document.getElementById("closeNav")
     $("#openNav").click(function (event) {
       console.log(mySidenav);
-      mySidenav.style.width = "300px";
+      mySidenav.style.width = "350px";
+      closeButton.style.position = "fixed";
     });
 
     $("#closeNav").click(function (event) {
       let mySideNav = document.getElementById("mySidenav");
       event.preventDefault();
       mySideNav.style.width = "0";
+      closeButton.style.position = "absolute";
     });
     // End for Testing
   });
