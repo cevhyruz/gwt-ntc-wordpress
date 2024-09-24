@@ -321,7 +321,6 @@ function eraseCookie(name) {
     var mySidenav = document.getElementById("mySidenav")
     var closeButton = document.getElementById("closeNav")
     $("#openNav").click(function (event) {
-      console.log(mySidenav);
       mySidenav.style.width = "350px";
       closeButton.style.position = "fixed";
     });
