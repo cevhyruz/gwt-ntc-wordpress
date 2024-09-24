@@ -386,6 +386,13 @@ h6 {
   padding: 0 20px;
   width: 195px;
 }
+
+.search-field {
+   font-size: 21px;
+   padding: 20px;
+}
+
+
 #offCanvasRight input[type="search"],
 .top-bar-right input[type="search"] {
   height: 2.3125rem;
@@ -517,7 +524,7 @@ this is for mobile menus */
   z-index: 1000;
   top: 0;
   right: 0;
-  background-color: #dadada;
+  background-color: #efefef;
   overflow-x: hidden !important;
   transition: 0.2s;
   /* margin-top: 40px; */
@@ -531,8 +538,8 @@ this is for mobile menus */
 .sidenav a {
   padding: 4px 4px 4px;
   text-decoration: none;
-  font-size: 16px;
-  color: rgb(59, 56, 56);
+  font-size: 21px;
+  color: #3c506C;
   display: block;
   transition: 0.3s;
 }
