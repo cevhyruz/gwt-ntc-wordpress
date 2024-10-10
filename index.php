@@ -24,7 +24,7 @@ include_once('inc/banner.php');
             <?php if ( have_posts() ) : ?>
 
             <?php
-						// Start the loop.
+
 						while ( have_posts() ) : the_post();
 						/*
 						 * Include the Post-Format-specific template for the content.
@@ -39,6 +39,10 @@ include_once('inc/banner.php');
 						else :
 							get_template_part( 'no-results', 'index' ); 
 						endif; ?>
+
+<?php if ( comments_open() || get_comments_number() ) :
+    comments_template();
+endif; ?>
         </div><!-- end content -->
 
         <?php 

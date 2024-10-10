@@ -278,7 +278,6 @@ function eraseCookie(name) {
       return false;
     });
 
-    // For Testing
     // Adjust Text Sizing
     var zoom = 0;
     $("p").each(function () {
@@ -335,3 +334,13 @@ function eraseCookie(name) {
   });
 })(jQuery, Foundation);
 $(document).foundation();
+
+document.querySelectorAll('.sidenav > li > a').forEach(function(menuItem) {
+    menuItem.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        const submenu = this.nextElementSibling; // Get the next <ul> (submenu)
+        if (submenu) {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
+        }
+    });
+});

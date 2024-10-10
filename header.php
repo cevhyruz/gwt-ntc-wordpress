@@ -8,7 +8,6 @@
  * @since Government Website Template 2.0
  */
 
-
 ?>
 
 <!DOCTYPE html>
@@ -268,17 +267,37 @@ Press esc, or click the close the button to close this dialog box.
 
     <div class="off-canvas-wrapper">
         <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
             <!-- off-canvas right menu -->
             <nav id="mySidenav" class="sidenav hide-for-large">
                 <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
                 <div style="padding:10px;" class="list-item"><?php get_search_form(); ?></div>
                 <ul style="list-style: none;">
-                    <?php wp_nav_menu( array('theme_location'  => 'topbar_left', 'items_wrap' => '%3$s', 'container' => false,'walker' => new Off_Canvass_Menu() )); ?>
-                    <?php wp_nav_menu( array('theme_location'  => 'topbar_right', 'items_wrap' => '%3$s', 'container' => false, 'fallback_cb' => false, 'walker' => new Off_Canvass_Menu() )); ?>
-                    <?php // if(has_nav_menu('aux_nav')): ?>
-                    <li id="aux-offmenu" class="list-item">AUXILIARY MENU</li>
-                    <?php wp_nav_menu( array('theme_location'  => 'aux_nav', 'items_wrap' => '%3$s', 'container' => false, 'fallback_cb' => false, 'walker' => new Off_Canvass_Menu() )); ?>
-                    <?php //endif; ?>
+                    <?php wp_nav_menu( array(
+                      'theme_location' => 'topbar_left',
+                      'items_wrap'     => '%3$s',
+                      'container'      => false,
+                      'walker'         => new Off_Canvass_Menu()
+                    )); ?>
+
+                    <?php wp_nav_menu( array(
+                      'theme_location' => 'topbar_right',
+                      'items_wrap'     => '%3$s',
+                      'container'      => false,
+                      'fallback_cb'    => false,
+                      'walker'         => new Off_Canvass_Menu()
+                    )); ?>
+
+                    <?php if(has_nav_menu('aux_nav')): ?>
+                      <li id="aux-offmenu" class="list-item">AUXILIARY MENU</li>
+                      <?php wp_nav_menu( array(
+                        'theme_location' => 'aux_nav',
+                        'items_wrap' => '%3$s',
+                        'container' => false,
+                        'fallback_cb' => false,
+                        'walker' => new Off_Canvass_Menu()
+                      )); ?>
+                    <?php endif; ?>
                 </ul>
             </nav>
 
@@ -430,8 +449,7 @@ Press esc, or click the close the button to close this dialog box.
 
                         <?php if(is_active_sidebar('ear-content-1')): ?>
                         <div class="<?php echo $ear_content_class ?> columns">
-                            <?php do_action( 'before_sidebar' ); ?>
-                            <?php dynamic_sidebar( 'ear-content-1' ) ?>
+                            <?php do_action( 'before_sidebar' ); ?> <?php dynamic_sidebar( 'ear-content-1' ) ?>
                         </div>
                         <?php endif; ?>
 

@@ -39,6 +39,9 @@ include_once('inc/banner.php');
 				
 				endwhile; //end of the loop 
 			?>
+<?php if ( comments_open() || get_comments_number() ) :
+    comments_template();
+endif; ?>
         </div><!-- end content -->
 
         <?php 

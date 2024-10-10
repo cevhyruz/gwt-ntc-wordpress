@@ -920,3 +920,27 @@ this is for mobile menus */
  */
 @media only screen and (min-width: 120.063em) {
 }
+
+
+/* Hide submenus by default */
+.sidenav ul ul {
+    display: none; /* Hide submenus */
+    position: absolute; /* Position them absolutely */
+    left: 100%; /* Align them to the right of the parent */
+    top: 0; /* Align them to the top of the parent */
+    z-index: 1; /* Ensure they are above other content */
+}
+
+/* Show submenu on hover */
+.sidenav li:hover > ul {
+    display: block; /* Show submenu on hover */
+}
+
+/* Optional: Add some styling */
+.sidenav ul {
+    padding: 0; /* Remove padding */
+}
+
+.sidenav li {
+    position: relative; /* Position relative for absolute positioning of submenu */
+}
